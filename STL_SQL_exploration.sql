@@ -1,13 +1,14 @@
---- SQL exporation data for soil testing lab
+--- SQL exploration data for soil testing lab from year 2018 to 2022
 
 --- Joining both tables into one
 With Clients As 
 (SELECT *,
 FROM `STL_orders.STL-2018-2022_4-1` 
+WHERE  Year > 2017 AND 2023 > Year
 UNION DISTINCT
 SELECT *
-FROM `STL_orders.STL-2021-2022_4-1`)
--- From the new table
+FROM `STL_orders.STL-2021-2022_4-1`
+WHERE  Year > 2017 AND 2023 > Year)
 SELECT 
 *
 FROM Clients
@@ -17,10 +18,12 @@ FROM Clients
 SELECT Safe_cast (Year as Integer) as Year, COUNT (*) AS number_of_order
 FROM 
 (SELECT Year,  LabNo
-FROM `STL_orders.STL-2018-2022_4-1` 
+FROM `STL_orders.STL-2018-2022_4-1`
+WHERE  Year > 2017 AND 2023 > Year
 UNION DISTINCT
 SELECT Year, LabNo
-FROM `STL_orders.STL-2021-2022_4-1`)
+FROM `STL_orders.STL-2021-2022_4-1`
+WHERE  Year > 2017 AND 2023 > Year)
 WHERE  Year > 2017 AND 2023 > Year
 GROUP BY Year
 ORDER BY Year DESC
@@ -30,9 +33,11 @@ ORDER BY Year DESC
 With Clients As 
 (SELECT *,
 FROM `STL_orders.STL-2018-2022_4-1` 
+WHERE  Year > 2017 AND 2023 > Year
 UNION DISTINCT
 SELECT *
-FROM `STL_orders.STL-2021-2022_4-1`)
+FROM `STL_orders.STL-2021-2022_4-1`
+WHERE  Year > 2017 AND 2023 > Year)
 SELECT 
 Customer,
 Count (*) AS Total_samples
