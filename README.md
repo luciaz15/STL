@@ -12,6 +12,6 @@ The data used in this project corresponds to a soil testing laboratory in the sp
 * Change of number of samples with time?
 * Who are the most frequent client?
 * What time of year the most samples are received in for analysis?
-* Which sector sends the most samples to the testing laboratory?
+* Which sector  (Research, public, private) sends the most samples to the testing laboratory?
 
 
