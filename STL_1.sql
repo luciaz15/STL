@@ -8,7 +8,7 @@ Safe_cast (LabNo as Integer) as LabNo,
 Month,
 Year, 
 OrderNo
-FROM `geometric-petal-362919.STL_orders.STL_2018-2022_3-11` 
+FROM `STL_orders.STL_2018-2022_3-11` 
 UNION DISTINCT
 SELECT
 Customer, 
@@ -18,7 +18,7 @@ Safe_cast (LabNo as Integer) as LabNo,
 Month,
 Year, 
 OrderNo
-FROM `geometric-petal-362919.STL_orders.STL_2021-2022_v-3-11`)
+FROM `STL_orders.STL_2021-2022_v-3-11`)
 -- From the new table motnh and year total samples
 SELECT 
 Customer,
