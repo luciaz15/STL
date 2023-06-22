@@ -1,7 +1,7 @@
 # STL 
 ## Introduction
 
-This is my first data analyst project, and my first time doing a Github project. 
+Hi! My name is Lucia. This is my first data analyst project, and my first time doing a Github project. 
 
 ## Porject's goal
 
