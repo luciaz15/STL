@@ -3,17 +3,28 @@ title: "STL Project"
 output:
   html_document:
     df_print: paged
+  pdf_document: default
 ---
 
 This is my first notebook project in R. I will be exploring the following mocking soil laboratory dataset.
+```{r include=FALSE}
+library(readr)
+library(dplyr)
+library(ggplot2)
+library(tidyr)
+library(knitr)
 
-```{r}
-#Group an exclude years 2017 and 2023----
-#Filter unused years
+STL_2018_2022 <- read_csv("~/Downloads/STL_2018-2022.csv", 
+                          col_types = cols(LabNo = col_character(),Type = col_character(), 
+                                           NO3W = col_double(), B = col_double()))
+
+```
+
+
+
+```{r echo=TRUE}
 by_years <- STL_2018_2022 %>% 
   group_by (Year) %>% 
   filter (Year<2023, 2017<Year)
 by_years
 ```
-
-
