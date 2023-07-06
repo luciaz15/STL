@@ -1,0 +1,17 @@
+---
+title: "STL Project"
+output: html_notebook
+---
+
+This is my first notebook project in R. I will be exploring the following mocking soil laboratory dataset.
+
+```{r}
+#Group an exclude years 2017 and 2023----
+#Filter unused years
+by_years <- STL_2018_2022 %>% 
+  group_by (Year) %>% 
+  filter (Year<2023, 2017<Year)
+by_years
+```
+
+
