@@ -1,6 +1,8 @@
 ---
 title: "STL Project"
-output: html_notebook
+output:
+  html_document:
+    df_print: paged
 ---
 
 This is my first notebook project in R. I will be exploring the following mocking soil laboratory dataset.
