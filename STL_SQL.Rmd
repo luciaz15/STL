@@ -1,9 +1,8 @@
 ---
 title: "STL Project"
 output:
-  html_document:
-    df_print: paged
-  pdf_document: default
+  output: html_document
+
 ---
 
 This is my first notebook project in R. I will be exploring the following mocking soil laboratory dataset.
@@ -13,6 +12,7 @@ library(dplyr)
 library(ggplot2)
 library(tidyr)
 library(knitr)
+library(rmarkdown)
 
 STL_2018_2022 <- read_csv("~/Downloads/STL_2018-2022.csv", 
                           col_types = cols(LabNo = col_character(),Type = col_character(), 
@@ -23,8 +23,30 @@ STL_2018_2022 <- read_csv("~/Downloads/STL_2018-2022.csv",
 
 
 ```{r echo=TRUE}
+#Group an exclude years 2017 and 2023----
+#Filter unused years
 by_years <- STL_2018_2022 %>% 
   group_by (Year) %>% 
   filter (Year<2023, 2017<Year)
 by_years
+
+# Grouping by year----
+g_years <- STL_2018_2022 %>% 
+  #group_by (Year) %>% 
+  filter (Year<2023, 2017<Year) %>% 
+  count(Year)
+g_years
+
+# For testing
+t_years <- STL_2018_2022 %>% 
+  #group_by (Year) %>% 
+  filter (Year<2023, 2017<Year) 
+#%>% 
+#count(Year)
+t_years
+
+#graph the Evolution of samples per time 
+p_years <-ggplot (g_years, aes(x= Year, y=n)) + geom_bar (stat = "identity") + 
+  geom_text(aes(label = n, vjust = 2)) + theme_minimal() 
+p_years
 ```
