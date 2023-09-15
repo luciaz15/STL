@@ -3,11 +3,11 @@
 --- Joining both tables into one
 With Clients As 
 (SELECT *,
-FROM `STL_orders.STL-2018-2022_4-1` 
+FROM `STL_orders.STL-2018-2022_5-15` 
 WHERE  Year > 2017 AND 2023 > Year
 UNION DISTINCT
 SELECT *
-FROM `STL_orders.STL-2021-2022_4-1`
+FROM `STL_orders.STL-2021-2022_5-15`
 WHERE  Year > 2017 AND 2023 > Year)
 SELECT 
 *
@@ -18,11 +18,11 @@ FROM Clients
 SELECT Safe_cast (Year as Integer) as Year, COUNT (*) AS number_of_order
 FROM 
 (SELECT Year,  LabNo
-FROM `STL_orders.STL-2018-2022_4-1`
+FROM `STL_orders.STL-2018-2022_5-15`
 WHERE  Year > 2017 AND 2023 > Year
 UNION DISTINCT
 SELECT Year, LabNo
-FROM `STL_orders.STL-2021-2022_4-1`
+FROM `STL_orders.STL-2021-2022_5-15`
 WHERE  Year > 2017 AND 2023 > Year)
 WHERE  Year > 2017 AND 2023 > Year
 GROUP BY Year
@@ -32,11 +32,11 @@ ORDER BY Year DESC
 
 With Clients As 
 (SELECT *,
-FROM `STL_orders.STL-2018-2022_4-1` 
+FROM `STL_orders.STL-2018-2022_5-15` 
 WHERE  Year > 2017 AND 2023 > Year
 UNION DISTINCT
 SELECT *
-FROM `STL_orders.STL-2021-2022_4-1`
+FROM `STL_orders.STL-2021-2022_5-15`
 WHERE  Year > 2017 AND 2023 > Year)
 SELECT 
 Customer,
@@ -51,11 +51,11 @@ Order by Total_samples DESC
 SELECT Month, COUNT (*) AS number_of_order
 FROM 
 (SELECT Year,  Month, LabNo
-FROM `STL_orders.STL-2018-2022_4-1` 
+FROM `STL_orders.STL-2018-2022_5-15` 
 WHERE  Year > 2017 AND 2023 > Year
 UNION DISTINCT
 SELECT Year, Month, LabNo
-FROM `STL_orders.STL-2021-2022_4-1`
+FROM `STL_orders.STL-2021-2022_5-15`
 WHERE  Year > 2017 AND 2023 > Year)
 GROUP BY Month
 ORDER BY number_of_order DESC
@@ -64,11 +64,11 @@ ORDER BY number_of_order DESC
 SELECT Sector, COUNT (*) AS number_of_order
 FROM 
 (SELECT Year,  Sector, LabNo
-FROM `STL_orders.STL-2018-2022_4-1` 
+FROM `STL_orders.STL-2018-2022_5-15` 
 WHERE  Year > 2017 AND 2023 > Year
 UNION DISTINCT
 SELECT Year, Sector, LabNo
-FROM `STL_orders.STL-2021-2022_4-1`
+FROM `STL_orders.STL-2021-2022_5-15`
 WHERE  Year > 2017 AND 2023 > Year)
 GROUP BY Sector
 ORDER BY number_of_order DESC
