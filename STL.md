@@ -1,4 +1,4 @@
-STL Project
+?STL Project
 ================
 
 ## Clean and check data:
@@ -44,9 +44,9 @@ p_years <-ggplot (g_years, aes(x= Year, y=n)) + geom_bar (stat = "identity") +
 p_years
 ```
 
-![](STL_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
 
-![](/Users/Luli/Desktop/Data/First_try_files/figure-gfm/bar_total_samples.png)
+<img src="figure-gfm/bar_total_samples.png" width="100%" />
+
 
 - What percetages does each sector contributes to the total number of
   samples?
@@ -69,9 +69,8 @@ percent_df <- STL_2018_2022 %>%
 percent_df
 ```
 
-![](STL_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+<img src="figure-gfm/percent_graph.png" width="100%" />
 
-![](/Users/Luli/Desktop/Data/First_try_files/figure-gfm/percent_graph.png)
 
 ## Evolution of number of samples
 
@@ -138,9 +137,9 @@ p_time <- STL_2018_2022 %>%
 p_time
 ```
 
-![](STL_files/figure-gfm/Line%20plot-1.png)<!-- -->
 
-![](/Users/Luli/Desktop/Data/First_try_files/figure-gfm/Line_plot-1.png)
+<img src="figure-gfm/Line_plot-1.png" width="100%" />
+
 
 ## Faucet graphs
 
@@ -175,9 +174,8 @@ p3 <- STL_2018_2022 %>%
 p3
 ```
 
-![](STL_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+<img src="figure-gfm/faucet_graph.png" width="100%" />
 
-![](/Users/Luli/Desktop/Data/First_try_files/figure-gfm/faucet_graph.png)
 
 ## Who is the most frequent client?
 
