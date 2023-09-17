@@ -1,4 +1,4 @@
-?STL Project
+STL Project
 ================
 
 ## Clean and check data:
